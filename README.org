@@ -24,6 +24,7 @@
 - useMutation, useQuery & useInfiniteQuery
 
 ** Setup
+*** Bootstrap
 #+BEGIN_SRC bash
 pnpx create-t3-app@latest twtr_exemplar
 # Select TypeScript, nextAuth, prisma, tailwind
@@ -50,4 +51,9 @@ Add a ~turbo.json~ file at the base of your repository.
     }
   }
 }
+#+END_SRC
+*** Setting up a Database
+We'll be using a Supabase PostgreSQL database connected via Prisma, but feel free to use the default ~sqlite~ configuration.
+#+BEGIN_SRC bash
+pnpm install @supabase/supabase-js
 #+END_SRC
