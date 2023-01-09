@@ -1,0 +1,50 @@
+* Create T3 App
+:PROPERTIES:
+:CUSTOM_ID: create-t3-app
+:END:
+This is a [[https://create.t3.gg/][T3 Stack]] project bootstrapped with
+=create-t3-app=.
+
+** What's next? How do I make an app with this?
+:PROPERTIES:
+:CUSTOM_ID: whats-next-how-do-i-make-an-app-with-this
+:END:
+We try to keep this project as simple as possible, so you can start with
+just the scaffolding we set up for you, and add additional things later
+when they become necessary.
+
+If you are not familiar with the different technologies used in this
+project, please refer to the respective docs. If you still are in the
+wind, please join our [[https://t3.gg/discord][Discord]] and ask for
+help.
+
+- [[https://nextjs.org][Next.js]]
+- [[https://next-auth.js.org][NextAuth.js]]
+- [[https://prisma.io][Prisma]]
+- [[https://tailwindcss.com][Tailwind CSS]]
+- [[https://trpc.io][tRPC]]
+
+** Learn More
+:PROPERTIES:
+:CUSTOM_ID: learn-more
+:END:
+To learn more about the [[https://create.t3.gg/][T3 Stack]], take a look
+at the following resources:
+
+- [[https://create.t3.gg/][Documentation]]
+- [[https://create.t3.gg/en/faq#what-learning-resources-are-currently-available][Learn
+  the T3 Stack]] --- Check out these awesome tutorials
+
+You can check out the
+[[https://github.com/t3-oss/create-t3-app][create-t3-app GitHub
+repository]] --- your feedback and contributions are welcome!
+
+** How do I deploy this?
+:PROPERTIES:
+:CUSTOM_ID: how-do-i-deploy-this
+:END:
+Follow our deployment guides for
+[[https://create.t3.gg/en/deployment/vercel][Vercel]],
+[[https://create.t3.gg/en/deployment/netlify][Netlify]] and
+[[https://create.t3.gg/en/deployment/docker][Docker]] for more
+information.
