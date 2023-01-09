@@ -8,6 +8,7 @@
 - Prisma -> Database ORM
 - create-t3-app
 - Day.js - Date formatting
+- Turborepo - high-performance build system for JS and TS codebases. speeds ups the execution of scripts in your ~package.json~
 ** Features
 *** TODO Google OAuth
 *** TODO Send a tweet
@@ -21,3 +22,29 @@
 - Manually updating the cache
 - Formatting dates with Day.js
 - useMutation, useQuery & useInfiniteQuery
+
+** Setup
+#+BEGIN_SRC bash
+pnpx create-t3-app@latest twtr_exemplar
+# Select TypeScript, nextAuth, prisma, tailwind
+# (Optional) Initialize a new git repository.
+# run pnpm install
+pnpm install turbo --save-dev
+touch turbo.json
+#+END_SRC
+
+Add a ~turbo.json~ file at the base of your repository.
+
+#+BEGIN_SRC json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": [".next/**"]
+    },
+    "lint": {
+      "outputs": []
+    }
+  }
+}
+#+END_SRC
