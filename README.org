@@ -29,6 +29,9 @@ pnpx create-t3-app@latest twtr_exemplar
 # Select TypeScript, nextAuth, prisma, tailwind
 # (Optional) Initialize a new git repository.
 # run pnpm install
+# install rome tools for linting and formatting
+pnpm install rome --save-dev
+pnpx rome init
 pnpm install turbo --save-dev
 touch turbo.json
 #+END_SRC
