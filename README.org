@@ -57,3 +57,7 @@ We'll be using a Supabase PostgreSQL database connected via Prisma, but feel fre
 #+BEGIN_SRC bash
 pnpm install @supabase/supabase-js
 #+END_SRC
+*** Project Dependencies
+#+BEGIN_SRC bash
+pnpm add react-icons@latest dayjs@latest
+#+END_SRC
