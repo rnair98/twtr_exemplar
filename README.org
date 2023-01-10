@@ -3,6 +3,7 @@
 - main -> PR this branch for all edits.
 - dev -> checkout this branch locally and test all changes made here.
 ** Technologies used
+- pnpm/bun.sh
 - Next.js
 - Tailwind CSS
 - Prisma -> Database ORM
@@ -17,6 +18,7 @@
 ** Concepts
 - OAuth
 - tRPC
+- Schema Validation w/ Zod
 - Cursor based pagination
 - Invalidating queries
 - Manually updating the cache
