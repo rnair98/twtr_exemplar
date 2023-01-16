@@ -1,9 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import { api } from "../utils/api";
+import { Timeline } from "../components/Timeline";
 
 const Home: NextPage = () => {
   const { data: session } = useSession();
@@ -17,8 +18,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div>
-        <button onClick={() => signIn()}>Login</button>
-        {JSON.stringify(session)}
+        <Timeline />
       </div>
     </>
   );
