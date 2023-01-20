@@ -10,12 +10,12 @@ export const tweetSchema = object({
     })
         .min(10)
         .max(280),
-})
+});
 
 
 export function CreateTweet(){
-    const [ text, setText ] = useState('');
-    const [ error, setError ] = useState('');
+    const [ text, setText ] = useState("");
+    const [ error, setError ] = useState("");
 
     const utils = api.useContext();
 
@@ -27,11 +27,10 @@ export function CreateTweet(){
     });
 
 
-    function handleSubmit(e: { preventDefault: () => void; }){
+    async function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
-
         try {
-            tweetSchema.parse({ text });
+            await tweetSchema.parse({ text });
         } catch (e) {
             setError(e.message);
             return;
@@ -48,6 +47,7 @@ export function CreateTweet(){
             border-2 rounded-md p-4"
         >
             <textarea
+                placeholder="What's happening?"
                 onChange={(e) => setText(e.target.value)}
                 className="shadow p4 w-full"
             />

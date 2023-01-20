@@ -1,11 +1,11 @@
-import type { RouterOutputs } from "../utils/api";
-import { RouterInputs, api } from "../utils/api";
+import type { RouterOutputs , RouterInputs} from "../utils/api";
+import { api } from "../utils/api";
 import { useEffect, useState } from "react";
 import { CreateTweet } from "./CreateTweet";
 import Image from "next/image";
 import { AiFillHeart } from "react-icons/ai";
-import type { QueryClient } from "@tanstack/react-query";
-import { InfiniteData, useQueryClient } from "@tanstack/react-query";
+import type { QueryClient , InfiniteData} from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -66,7 +66,7 @@ function updateCache({
 		tweetId: string;
 	};
 	data: {
-		userID: string;
+		userId: string;
 	};
 	action: "like" | "unlike";
 }) {
@@ -84,13 +84,14 @@ function updateCache({
 			const newTweets = newData.pages.map((page) => {
 				return {
 					tweets: page.tweets.map((tweet) => {
-						if (tweet.id === variables.tweetID){
+						if (tweet.id === variables.tweetId){
 							return {
 								...tweet,
-								likes: action ==== 'like' ? [[data.userID]] : [],
+								likes: action === "like" ? [data.userId] : [],
 								_count: {
 									likes: tweet._count.likes + value,
-								}
+								},
+							};
 						}
 						return tweet;
 					}),
@@ -99,7 +100,7 @@ function updateCache({
 			return {
 				...newData,
 				pages: newTweets,
-			}
+			};
 		}
 	);
 }
