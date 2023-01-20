@@ -16,9 +16,17 @@ export const tweetSchema = object({
 export function CreateTweet(){
     const [ text, setText ] = useState('');
     const [ error, setError ] = useState('');
-    
-    const { mutateAsync } = api.tweet.create.useMutation();
-    
+
+    const utils = api.useContext();
+
+    const { mutateAsync } = api.tweet.create.useMutation({
+        onSuccess: () => {
+            setText('');
+            utils.tweet.timeline.invalidate();
+        }
+    });
+
+
     function handleSubmit(e: { preventDefault: () => void; }){
         e.preventDefault();
 
@@ -34,9 +42,9 @@ export function CreateTweet(){
     return(
         <>
         {error && JSON.stringify(error)}
-        <form 
-            onSubmit={handleSubmit} 
-            className="w-full flex flex-col 
+        <form
+            onSubmit={handleSubmit}
+            className="w-full flex flex-col
             border-2 rounded-md p-4"
         >
             <textarea
@@ -44,7 +52,7 @@ export function CreateTweet(){
                 className="shadow p4 w-full"
             />
             <div className="mt-4 flex justify-end">
-                <button 
+                <button
                     type="submit"
                     className="bg-slate-500 text-white px-4 py-2 rounded-md"
                 >
